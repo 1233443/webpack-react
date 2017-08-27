@@ -1,0 +1,54 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+    [
+      "import",
+      [
+        {
+          "libraryName": "antd",
+          "style": true
+        }
+      ]
+    ]
+  ],
+  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "react-transform",
+          {
+            "transforms": [
+              {
+                "transform": "react-transform-hmr",
+                "imports": [
+                  "react"
+                ],
+                "locals": [
+                  "module"
+                ]
+              },
+              {
+                "transform": "react-transform-catch-errors",
+                "imports": [
+                  "react",
+                  "redbox-react"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-remove-console"
+      ]
+    }
+  }
+}
